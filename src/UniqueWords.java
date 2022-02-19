@@ -15,20 +15,34 @@ public class UniqueWords {
 	 * @return number of unique strings in the list
 	 */
 	public static int countUnique(ArrayList<String> list) {
+
 		int count = 0;
 
-		for (int i = 0; i < list.size(); i++) {
+		for (int i = 0; i < list.size(); i++) {								//loops threw the array
 			boolean unique = true;
+			ArrayList<String> one = new ArrayList<>();
+			// count++;
+
 			for (int j = 0; j < i; j++) {
-				if (list.get(i).equalsIgnoreCase(list.get(j))) {
+
+				if (list.get(i).equalsIgnoreCase(list.get(j))) { // This if statement breaks the loop if a word repeats
+					// one.add(i);
 					unique = false;
 					break;
 				}
 
+				/*
+				 * for(int i=0; i<one.size(); i++){ 
+				 * if(unique=false){ 
+				 * one.add(i) 
+				 * } 
+				 * }
+				 */
+
 			}
 			if (unique) {
-
-				count++;
+				// one.get(i).add(j);
+				count++; // adds up all of the unique words
 			}
 		}
 
@@ -47,6 +61,7 @@ public class UniqueWords {
 
 		int unique = countUnique(words);
 		System.out.println(words + " has " + unique + " unique words");
+		// System.out.println(one.size());
 
 	}
 }
